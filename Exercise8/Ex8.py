@@ -11,5 +11,5 @@ def getIDAndYearForGraduate(studentname):
         if student[1] == studentname:
             return student[0], student[2]
         
-
-print(getIDAndYearForGraduate("Hoshi Sato"))
+id, year = getIDAndYearForGraduate("Hoshi Sato")
+print(id, year)
