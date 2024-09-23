@@ -25,5 +25,12 @@ for user, user_info in users.items():
     
     print("\tChoose the following security question: " + securityQuestion)
     print("\tAnswer to the security question: " + securityAnswer)
-
-   
+    try:
+        email = users['emailAddress']
+    except KeyError:
+        print("\t Error finding emailAddress")
+#    username = user_info['username']
+    try:
+        usernum = user_info['username']+ 920456483
+    except TypeError:
+        print("\t These two data types can't be added together! ")  
