@@ -6,7 +6,8 @@ def gradeCenter(name, score, id, **kwargs):
         student[key] = value
     return student
 
+def run():
+    wcuStudent = gradeCenter('Functions-ReturnValues', 100, 14, completed='true')
+    print(wcuStudent)
 
-wcuStudent = gradeCenter('Functions-ReturnValues', 100, 14, completed='true')
-
-print(wcuStudent)
+run()
