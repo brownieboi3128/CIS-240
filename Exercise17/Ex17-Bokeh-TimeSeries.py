@@ -20,3 +20,13 @@ print(amzn_df.head())
 print(amzn_df.dtypes)
 print(goog_df.head())
 print(goog_df.dtypes)
+
+#create a ColumnDataSource object
+abnd_source = ColumnDataSource(abnd_df)
+amzn_source = ColumnDataSource(amzn_df)
+goog_source = ColumnDataSource(goog_df)
+
+#instantiate the figure object
+fig = figure(x_axis_type = 'datetime')
+
+fig.line
