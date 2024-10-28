@@ -9,6 +9,7 @@ apparel_df = pd.read_csv('Apparel16.csv')
 # Create a ColumnDataSource object
 apparel_source = ColumnDataSource(apparel_df)
 apparel = apparel_df['Apparel']
+
 # Instantiate the figure object with the x_range
 fig = figure(x_range = apparel_df['Apparel'], 
              title='Apparel Sales by Type and Year',
