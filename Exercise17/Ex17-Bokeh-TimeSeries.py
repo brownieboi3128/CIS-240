@@ -4,19 +4,19 @@ from bokeh.models import ColumnDataSource
 import pandas as pd
 
 #read the csv file into a pandas dataframe
-abnd = pd.read_csv('ABND.csv')
-amzn = pd.read_csv('AMZN.csv')
-goog = pd.read_csv('GOOG.csv')
+abnd_df = pd.read_csv('ABND.csv')
+amzn_df = pd.read_csv('AMZN.csv')
+goog_df = pd.read_csv('GOOG.csv')
 
 #convert the date values to datetime type
-abnd['Date'] = pd.to_datetime(abnd['Date'])
-amzn['Date'] = pd.to_datetime(amzn['Date'])
-goog['Date'] = pd.to_datetime(goog['Date'])
+abnd_df['Date'] = pd.to_datetime(abnd_df['Date'])
+amzn_df['Date'] = pd.to_datetime(amzn_df['Date'])
+goog_df['Date'] = pd.to_datetime(goog_df['Date'])
 
 #print the first few rows of the dataframe and the data types of the columns
-print(abnd.head())
-print(abnd.dtypes)
-print(amzn.head())
-print(amzn.dtypes)
-print(goog.head())
-print(goog.dtypes)
+print(abnd_df.head())
+print(abnd_df.dtypes)
+print(amzn_df.head())
+print(amzn_df.dtypes)
+print(goog_df.head())
+print(goog_df.dtypes)
