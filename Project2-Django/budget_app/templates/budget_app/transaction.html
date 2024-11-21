@@ -1,10 +1,19 @@
 {% extends 'budget_app/base.html' %}
 
 {% block content %}
-    <h1>{{ transaction.name }}</h1>
-    <ul>
-        {% for entry in transaction.entry_set.all %}
-            <li>{{ entry.name }}: {{ entry.amount }}</li>
-        {% endfor %}
-    </ul>
+
+<p>Transaction: {{transaction}}</p>
+
+<p>Entries:</p>
+<ul>
+{% for entry in entries %}
+    <li>
+        <p>{{entry.date_added|date:'M d, Y H:i'}}</p>
+        <p>{{entry.merchant}}</p>
+        <p>{{entry.description|linebreaks}}</p>
+        <p>{{entry.transaction_amount}}</p>
+    </li>
+{% endfor %}
+</ul>
+
 {% endblock %}

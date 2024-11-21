@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from budget_app.models import Transactions
+from budget_app.models import Transaction, Entry
  
-admin.site.register(Transactions)
+admin.site.register(Transaction)
+admin.site.register(Entry)

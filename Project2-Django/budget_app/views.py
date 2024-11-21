@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Transactions
+from . models import Transaction
 
 # Create your views here.
 def index(request):
@@ -8,13 +8,13 @@ def index(request):
 
 def transactions(request):
     """Show all transaction types."""
-    transactions = Transactions.objects.order_by('date_added')
+    transactions = Transaction.objects.order_by('date_added')
     context = {'transactions': transactions}
     return render(request, 'budget_app/transactions.html', context)
 
 def transaction(request, transaction_id):
     """Show all transactions for a specific type."""
-    transaction = Transactions.objects.get(id=transaction_id)
+    transaction = Transaction.objects.get(id=transaction_id)
     entries = transaction.entry_set.order_by('-date_added')
     context = {'transaction': transaction, 'entries': entries}
     return render(request, 'budget_app/transaction.html', context)
