@@ -1,0 +1,10 @@
+{% extends 'budget_app/base.html' %}
+
+{% block content %}
+    <h1>{{ transaction.name }}</h1>
+    <ul>
+        {% for entry in transaction.entry_set.all %}
+            <li>{{ entry.name }}: {{ entry.amount }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
