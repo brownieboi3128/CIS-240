@@ -1,0 +1,14 @@
+{% extends 'budget_app/base.html' %}
+
+{% block content %}
+   
+    <p><a herf="{% url 'budget_app:transaction' transaction.id %}">{{ transaction }}</a></p>
+
+    <p>Add a new entry:</p>
+    <form action="{% url 'budget_app:new_entry' transaction.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add entry</button>
+    </form>
+
+    {% endblock content %}

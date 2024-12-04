@@ -1,0 +1,22 @@
+{% extends 'budget_app/base.html' %}
+
+{% block content %}
+
+<p>Transaction: {{transaction}}</p>
+
+<p>Entries:</p>
+<p>
+    <a href="{% url 'budget_app:new_entry' transaction.id %}">Add a new entry</a>
+</p>
+<ul>
+{% for entry in entries %}
+    <li>
+        <p>{{entry.date_added|date:'M d, Y H:i'}}</p>
+        <p>{{entry.merchant}}</p>
+        <p>{{entry.description|linebreaks}}</p>
+        <p>{{entry.transaction_amount}}</p>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

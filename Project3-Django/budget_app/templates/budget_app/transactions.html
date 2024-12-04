@@ -1,0 +1,12 @@
+{% extends 'budget_app/base.html' %}
+
+{% block content %}
+
+<p>Transactions</p>
+<ul>
+    {% for transaction in transactions %}
+        <li><a href="{% url 'budget_app:transaction' transaction.id %}">{{ transaction }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
