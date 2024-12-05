@@ -51,9 +51,9 @@ def bar_chart(request):
     transaction_entry_count = [(transaction.id, transaction.entry_set.count()) for transaction in transactions]
     df = pd.DataFrame(transaction_entry_count, columns=['transactions', 'Entry Count'])
     # instantiate a figure object
-    fig = figure(x_range=[str(x) for x in df['transactions']], title='Transaction Entry Count', height=500, width=700)
+    fig = figure(x_range=df['Entry Count'], title='Transaction Entry Count', height=500, width=700)
     #create the bar chart
-    fig.vbar(source=df, x='transaction', top='Entry Count', width=0.9, color='purple')
+    fig.vbar(source=df, x='Entry Count', top='Transaction', width=0.9, color='purple')
     html, div = components(fig)
     context = {'html': html, 'div': div}
     return render(request, 'budget_app/bar_chart.html', context)
